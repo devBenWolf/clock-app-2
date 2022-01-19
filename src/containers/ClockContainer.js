@@ -121,7 +121,7 @@ const ClockContainer = () => {
                     {background ? <FaSun style={{height: "50px", width: "50px", margin: " 0 0 1rem 0"}} /> : <FaMoon />}
                     <Clock.H4>{greeting}</Clock.H4>
                 </Clock.SalutationDiv>
-                <Clock.H1 >{timeOfDay}<Clock.MeridianSpan>{meridian}</Clock.MeridianSpan></Clock.H1>
+                <Clock.H1 style={{whiteSpace: "nowrap"}}>{timeOfDay}<Clock.MeridianSpan>{meridian}</Clock.MeridianSpan></Clock.H1>
                 <Clock.H3>{location}</Clock.H3>
             </Clock.InfoArticle>
             <Clock.ButtonArticle>

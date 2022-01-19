@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
         --clr-white: 0 0% 100%;
 
         // ****** font sizes ******
-        --fs-900: 10rem;
+        --fs-900: 8rem;
         --fs-800:  clamp(2rem, 2vw, 4rem);
         --fs-700: 1.5rem;
         --fs-600: 1.5rem;
