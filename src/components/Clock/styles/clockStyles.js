@@ -191,6 +191,7 @@ export const H5 = styled.h5`
     font-family: "Inter", sans-serif;
     font-weight: ${(props) => props.fontWeight};
     line-height: 22px;
+    margin: ${(props) => props.margin};
 
     @media(min-width: 75rem) {
         line-height: 28px;
