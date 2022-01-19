@@ -2,33 +2,25 @@ import styled from "styled-components"
 
 
 export const Main = styled.main`
+    position: relative;
     display: grid;
     grid-template-areas:
         "quote"
-        "."
         "info"
         "button"
         "menu";
         place-items: start;
 
         > * {
-            margin: 5rem;
+            margin: 0 5rem 0 5rem;
         }
 
-    @media (min-width: 45rem) {
-        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(2rem, 70rem)) minmax(2rem, 1fr);
-        grid-template-areas:
-            ". quote quote ."
-            ". . . ."
-            ". info button ."
-            "menu menu menu menu";
-    }
+
 
     @media (min-width: 75rem) {
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(2rem, 70rem)) minmax(2rem, 1fr);
         grid-template-areas:
             ". quote . ."
-            ". . . ."
             ". info button ."
             "menu menu menu menu";
     }
@@ -39,6 +31,7 @@ export const QuoteArticle = styled.article`
     align-self: start;
     padding: 2rem;
     border-radius: 10%/50%;
+    margin-top: 5rem;
 
 
 `
@@ -53,7 +46,6 @@ export const MenuArticle = styled.article`
     width: 100%;
     display: grid;
     align-self: end;
-    margin: 0;
     padding: 4rem 0 4rem 0;
     grid-template-areas:
         "zone"
@@ -91,7 +83,11 @@ export const SalutationDiv = styled.div`
 export const ButtonArticle = styled.article`
     grid-area: button;
     align-self: end;
-    justify-self: end;
+    justify-self: start;
+
+    @media(min-width: 75rem) {
+        justify-self: end;
+    }
 `
 export const Button = styled.button`
     display: flex;
@@ -105,6 +101,7 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    background-color: white;
 `
 export const ButtonSpan = styled.span`
     display: grid;
@@ -130,35 +127,64 @@ export const H1 = styled.h1`
     font-size: var(--fs-900);
     font-family: "Inter", sans-serif;
     font-weight: bold;
-    line-height: 200px;
-    letter-spacing: 5px;
+    line-height: 100px;
+    letter-spacing: -2.5px;
+    filter: brightness(1.2);
+
+    @media(min-width: 45rem) {
+        line-height: 175px;
+    }
+
+    @media(min-width: 75rem) {
+        line-height: 200px;
+        letter-spacing: -4.38px;
+    }
     
 `
 export const H2 = styled.h2`
     font-size: var(--fs-800);
     font-family: "Inter", sans-serif;
     font-weight: bold;
-    line-height: 68px;
+
+    @media(min-width: 75rem) {
+        line-height: 68px;
+    }
+
 `
 export const H3 = styled.h3`
     font-size: var(--fs-700);
     font-family: "Inter", sans-serif;
     font-weight: bold;
     line-height: 28px;
-    letter-spacing: 4.8px;
+    letter-spacing: 3px;
     text-transform: uppercase;
+    filter: brightness(1.2);
+
+    @media(min-width: 45rem) {
+        letter-spacing: 3.6px;
+    }
+
+    @media(min-width: 75rem) {
+        letter-spacing: 4.8px;
+    }
+  
 `
 export const H4 = styled.h4`
     font-size: var(--fs-600);
     padding: 0 0 0 4rem;
     font-family: "Inter", sans-serif;
-    line-height: 28px;
-    letter-spacing: 4px;
+    line-height: 25px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    margin: 0 0 1rem 0;
 
-    @media (max-width: 35rem) {
-        padding: 2rem;
+    @media(min-width: 45rem) {
+        line-height: 28px;
+        letter-spacing: 3.6px;
+    }
+
+    @media(min-width: 75rem) {
+        line-height: 28px;
+        letter-spacing: 4px;
     }
 `
 
@@ -167,13 +193,28 @@ export const H5 = styled.h5`
     font-family: "Inter", sans-serif;
     font-weight: bold;
     line-height: 28px;
+
+    @media(min-width: 75rem) {
+        line-height: 200px;
+        letter-spacing: -5px;
+    }
 `
 
 export const H6 = styled.h6`
-font-size: var(--fs-300);
-font-family: "Inter", sans-serif;
-font-weight: bold;
-line-height: 28px;
-letter-spacing: 4.8px;
-text-transform: uppercase;
+    font-size: var(--fs-300);
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    line-height: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    @media(min-width: 45rem) {
+        letter-spacing: 2.6px;
+    }
+
+    @media(min-width: 75rem) {
+        line-height: 28px;
+        letter-spacing: 4.8px;
+    }
+
 `

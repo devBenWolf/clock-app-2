@@ -111,7 +111,7 @@ const ClockContainer = () => {
         <>
         <GlobalStyles />
         <Main 
-            style={{minHeight: "100vh", backgroundImage: background ? "url(/assets/desktop/bg-image-daytime.jpg" : "url(/assets/desktop/bg-image-nighttime.jpg", backgroundSize: "cover"}} background={background}>
+            style={{minHeight: "100vh", backgroundImage: background ? "url(/assets/desktop/bg-image-daytime.jpg" : "url(/assets/desktop/bg-image-nighttime.jpg", backgroundSize: "cover"}}>
             <Clock.QuoteArticle style={showQuote}>
                 <Clock.P fontSize="var(--fs-700)">{quote.en}</Clock.P>
                 <Clock.P fontSize="var(--fs-700)" fontWeight="bold">{quote.author}</Clock.P>
