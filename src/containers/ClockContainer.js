@@ -67,7 +67,7 @@ const ClockContainer = () => {
 
     // get geolocation data
     const getLocationData = async () => {
-        const response = await fetch("http://ipwhois.app/json/")
+        const response = await fetch("https://ipwhois.app/json/")
         const locationData = await response.json()
         setLocation(locationData.city)
         setTimezone(locationData.timezone)
