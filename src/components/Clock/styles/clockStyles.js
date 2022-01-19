@@ -18,6 +18,15 @@ export const Main = styled.main`
     @media (min-width: 45rem) {
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(2rem, 70rem)) minmax(2rem, 1fr);
         grid-template-areas:
+            ". quote quote ."
+            ". . . ."
+            ". info button ."
+            "menu menu menu menu";
+    }
+
+    @media (min-width: 75rem) {
+        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(2rem, 70rem)) minmax(2rem, 1fr);
+        grid-template-areas:
             ". quote . ."
             ". . . ."
             ". info button ."
@@ -30,6 +39,8 @@ export const QuoteArticle = styled.article`
     align-self: start;
     padding: 2rem;
     border-radius: 10%/50%;
+
+
 `
 export const InfoArticle = styled.article`
         grid-area: info;
