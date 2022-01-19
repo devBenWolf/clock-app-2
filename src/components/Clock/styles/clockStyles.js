@@ -145,10 +145,7 @@ export const H2 = styled.h2`
     font-size: var(--fs-800);
     font-family: "Inter", sans-serif;
     font-weight: bold;
-
-    @media(min-width: 75rem) {
-        line-height: 68px;
-    }
+    line-height: 68px;
 
 `
 export const H3 = styled.h3`
