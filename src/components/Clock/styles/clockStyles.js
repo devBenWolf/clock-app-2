@@ -29,8 +29,8 @@ export const Section = styled.section``
 export const QuoteArticle = styled.article`
     grid-area: quote;
     align-self: start;
-    padding: 1.2rem;
-    border-radius: 10%/50%;
+    padding: 2rem;
+    border-radius: 25px;
     margin-top: 2rem;
 
 
