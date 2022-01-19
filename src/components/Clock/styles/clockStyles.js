@@ -12,7 +12,7 @@ export const Main = styled.main`
         place-items: start;
 
         > * {
-            margin: 0 5rem 0 5rem;
+            margin: 0 2rem 0 2rem;
         }
 
 
@@ -29,9 +29,9 @@ export const Section = styled.section``
 export const QuoteArticle = styled.article`
     grid-area: quote;
     align-self: start;
-    padding: 2rem;
+    padding: 1.2rem;
     border-radius: 10%/50%;
-    margin-top: 5rem;
+    margin-top: 2rem;
 
 
 `

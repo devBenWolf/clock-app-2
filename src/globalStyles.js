@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
         }
 
         @media (min-width: 65rem) {
-            --fs-900: 20rem;
+            --fs-900: 18rem;
             --fs-800: 5.6rem;
             --fs-700: 2.4rem;
             --fs-600: 2rem;
