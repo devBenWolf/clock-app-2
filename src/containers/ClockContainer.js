@@ -129,7 +129,7 @@ const ClockContainer = () => {
                     onClick={() => setButtonClick(!buttonClick)}
                 >{ buttonClick ? "Less" : "More"}
                     <Clock.ButtonSpan>
-                        { buttonClick ? <FaChevronDown style={{color: "white"}} /> : <FaChevronUp style={{color: "white"}} /> }
+                        { buttonClick ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
                     </Clock.ButtonSpan>
                 </Clock.Button>
             </Clock.ButtonArticle>
