@@ -17,7 +17,7 @@ export const Main = styled.main`
 
 
 
-    @media (min-width: 75rem) {
+    @media (min-width: 65rem) {
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(2rem, 70rem)) minmax(2rem, 1fr);
         grid-template-areas:
             ". quote . ."
@@ -54,11 +54,15 @@ export const MenuArticle = styled.article`
         "capital";
 
     > * {
-        margin: 0 5rem 0 5rem;
+        margin: 0 2rem 0 2rem;
     }
 
-        @media (min-width: 45rem) {
-            padding: 4rem 0 4rem 0;
+        @media (min-width: 35rem) {
+            > * {
+                margin: 0 5rem 0 5rem;
+            }
+
+            padding: 2rem 0 2rem 0;
            grid-template-areas:
             "zone country"
             "capital currency";
@@ -71,7 +75,7 @@ export const MenuDiv = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    @media (min-width: 45rem) {
+    @media (min-width: 35rem) {
         flex-direction: column;
         align-items: start;
         padding: 2rem 0 2rem 0;
@@ -86,13 +90,13 @@ export const ButtonArticle = styled.article`
     align-self: end;
     justify-self: start;
 
-    @media(min-width: 75rem) {
+    @media(min-width: 65rem) {
         justify-self: end;
     }
 `
 export const Button = styled.button`
     display: flex;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: hsl(var(--clr-dark) / 0.6);
     border-radius: 20%/50%;
     line-height: var(--lh-3);
@@ -101,7 +105,7 @@ export const Button = styled.button`
     text-transform: uppercase;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding:0.6rem 1rem 0.6rem 1rem;
     background-color: white;
 `
 export const ButtonSpan = styled.span`

@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
 
         // ****** font sizes ******
         --fs-900: 8rem;
-        --fs-800:  clamp(2rem, 2vw, 4rem);
+        --fs-800:  clamp(1.6rem, 4vw, 4rem);
         --fs-700: 1.5rem;
         --fs-600: 1.5rem;
         --fs-500: 1.2rem;
