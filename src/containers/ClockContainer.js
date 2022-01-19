@@ -113,8 +113,8 @@ const ClockContainer = () => {
         <Main 
             style={{minHeight: "100vh", backgroundImage: background ? "url(/assets/desktop/bg-image-daytime.jpg" : "url(/assets/desktop/bg-image-nighttime.jpg", backgroundSize: "cover"}}>
             <Clock.QuoteArticle style={showQuote}>
-                <Clock.P fontSize="var(--fs-700)">{quote.en}</Clock.P>
-                <Clock.P fontSize="var(--fs-700)" fontWeight="bold">{quote.author}</Clock.P>
+                <Clock.H5 >{quote.en}</Clock.H5>
+                <Clock.H5  fontWeight="bold">{quote.author}</Clock.H5>
             </Clock.QuoteArticle>
             <Clock.InfoArticle>
                 <Clock.SalutationDiv>

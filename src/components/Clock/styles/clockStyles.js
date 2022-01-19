@@ -46,7 +46,7 @@ export const MenuArticle = styled.article`
     width: 100%;
     display: grid;
     align-self: end;
-    padding: 4rem 0 4rem 0;
+
     grid-template-areas:
         "zone"
         "country"
@@ -58,6 +58,7 @@ export const MenuArticle = styled.article`
     }
 
         @media (min-width: 45rem) {
+            padding: 4rem 0 4rem 0;
            grid-template-areas:
             "zone country"
             "capital currency";
@@ -188,12 +189,11 @@ export const H4 = styled.h4`
 export const H5 = styled.h5`
     font-size: var(--fs-500);
     font-family: "Inter", sans-serif;
-    font-weight: bold;
-    line-height: 28px;
+    font-weight: ${(props) => props.fontWeight};
+    line-height: 22px;
 
     @media(min-width: 75rem) {
-        line-height: 200px;
-        letter-spacing: -5px;
+        line-height: 28px;
     }
 `
 
