@@ -56,9 +56,9 @@ const ClockContainer = () => {
         // set greeting based on time of day
         if (convertedHour >= 6 && convertedHour <= 12) {
             setGreeting("Good Morning, it's currently...")
-        } else if (convertedHour >= 12 && convertedHour <= 17) {
+        } else if (convertedHour > 12 && convertedHour <= 17) {
             setGreeting("Good Afternoon, it's currently...")
-        } else if (convertedHour >= 17 && convertedHour <= 18)  {
+        } else if (convertedHour > 17 && convertedHour <= 18)  {
             setGreeting("Good Evening, it's currently...")
         } else {
             setGreeting("Good Night, it's currently...")
@@ -87,7 +87,7 @@ const ClockContainer = () => {
         getTimeValues()
         getLocationData()
         getQuotes()
-        setInterval(getTimeValues, 30000)
+        setInterval(getTimeValues, 10000)
     }, [])
     console.log(buttonClick)
 
