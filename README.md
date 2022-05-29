@@ -1,3 +1,10 @@
+# Clock App
+Uses external APIs to set data based on user location. Additional logic for rendering content based on time of day.
+
+## Figma file and assets available at https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM
+
+## To see a deployment of this site, visit https://clock-app-2.vercel.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +75,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Getting started with Styled Components
+
+## [Docs](https://www.styled-components.com/docs)
+
+**See the documentation at [styled-components.com/docs](https://www.styled-components.com/docs)** for more information about using `styled-components`!
+
+Quicklinks to some of the most-visited pages:
+
+- [**Getting started**](https://www.styled-components.com/docs/basics)
+- [API Reference](https://styled-components.com/docs/api)
+- [Theming](https://www.styled-components.com/docs/advanced#theming)
+- [Server-side rendering](https://www.styled-components.com/docs/advanced#server-side-rendering)
+- [Tagged Template Literals explained](https://www.styled-components.com/docs/advanced#tagged-template-literals)
+
+# Getting started with React-Icons
+
+https://react-icons.github.io/react-icons/
