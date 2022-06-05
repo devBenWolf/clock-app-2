@@ -97,13 +97,14 @@ export const GlobalStyles = createGlobalStyle`
 
     html {
         font-size: 62.5%;
+        min-height: 100%;
     }
 
     body {
         font-size: var(--fs-body);
-        min-height: 100vh;
         font-family: var(--ff-inter);
         margin: 0;
+        min-height: 100%;
         text-rendering: optimizeSpeed;
     }
 

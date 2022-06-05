@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 
 export const Main = styled.main`
-    position: relative;
     display: grid;
+    height: 100vh;
     grid-template-areas:
         "quote"
         "info"
@@ -14,7 +14,7 @@ export const Main = styled.main`
         > * {
             margin: 0 2rem 0 2rem;
         }
-
+    grid-gap: 10rem;
 
 
     @media (min-width: 65rem) {
