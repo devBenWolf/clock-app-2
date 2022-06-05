@@ -3,9 +3,11 @@ import {
     InnerContainer,
     ControlsContainer,
     Input,
+    InputContainer,
     Select,
     Option,
     Button,
+    ButtonContainer,
     DisplayAlarmContainer,
 } from "./styles/alarmStyles"
 
@@ -22,6 +24,10 @@ Alarm.ControlsContainer = function AlarmControlsContainer({children, ...props}) 
     return (<ControlsContainer {...props}>{children}</ControlsContainer>
     )
 }
+Alarm.InputContainer = function AlarmInputContainer({children, ...props}) {
+    return (<InputContainer {...props}>{children}</InputContainer>
+    )
+}
 Alarm.Input = function AlarmInput({children, ...props}) {
     return (<Input {...props}>{children}</Input>
     )
@@ -32,6 +38,10 @@ Alarm.Select = function AlarmSelect({children, ...props}) {
 }
 Alarm.Option = function AlarmOption({children, ...props}) {
     return (<Option {...props}>{children}</Option>
+    )
+}
+Alarm.ButtonContainer = function AlarmButtonContainer({children, ...props}) {
+    return (<ButtonContainer {...props}>{children}</ButtonContainer>
     )
 }
 Alarm.Button = function AlarmButton({children, ...props}) {

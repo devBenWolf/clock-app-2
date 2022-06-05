@@ -3,6 +3,7 @@ import Clock from "../components/Clock";
 import { Main } from "../components/Clock/styles/clockStyles";
 import {FaChevronDown, FaChevronUp, FaSun, FaMoon} from "react-icons/fa"
 import { GlobalStyles } from "../globalStyles";
+import AlarmContainer from "./AlarmContainer";
 
 const ClockContainer = () => {
     const [timeOfDay, setTimeOfDay] = useState("")
@@ -117,6 +118,7 @@ const ClockContainer = () => {
                 <Clock.H5 >{quote.en}</Clock.H5>
                 <Clock.H5  fontWeight="bold" margin = "2rem 0 0 0">{quote.author}</Clock.H5>
             </Clock.QuoteArticle>
+            <AlarmContainer />
             <Clock.InfoArticle>
                 <Clock.SalutationDiv>
                     {background ? <FaSun style={{height: "50px", width: "50px", margin: " 0 0 1rem 0"}} /> : <FaMoon />}
