@@ -97,7 +97,7 @@ export const GlobalStyles = createGlobalStyle`
 
     html {
         font-size: 62.5%;
-        min-height: 100%;
+
     }
 
     body {

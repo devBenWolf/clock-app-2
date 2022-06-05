@@ -14,8 +14,6 @@ export const Main = styled.main`
         > * {
             margin: 0 2rem 0 2rem;
         }
-    grid-gap: 10rem;
-
 
     @media (min-width: 65rem) {
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(2rem, 70rem)) minmax(2rem, 1fr);
@@ -32,15 +30,17 @@ export const QuoteArticle = styled.article`
     padding: 2rem;
     border-radius: 25px;
     margin-top: 2rem;
-
+    border: solid red;
 
 `
 export const InfoArticle = styled.article`
         grid-area: info;
         align-self: end;
         color: hsl(var(--clr-white));
+        border: solid red;
 `
 export const MenuArticle = styled.article`
+border: solid red;
     grid-area: menu;
     justify-self: center;
     width: 100%;
@@ -63,7 +63,7 @@ export const MenuArticle = styled.article`
             }
 
             padding: 2rem 0 2rem 0;
-           grid-template-areas:
+            grid-template-areas:
             "zone country"
             "capital currency";
         }
