@@ -15,25 +15,32 @@ const Alarm = ({children, ...props}) => {
 }
 
 Alarm.InnerContainer = function AlarmInnerContainer({children, ...props}) {
-    <InnerContainer {...props}>{children}</InnerContainer>
+    return (<InnerContainer {...props}>{children}</InnerContainer>
+    )
 }
 Alarm.ControlsContainer = function AlarmControlsContainer({children, ...props}) {
-    <ControlsContainer {...props}>{children}</ControlsContainer>
+    return (<ControlsContainer {...props}>{children}</ControlsContainer>
+    )
 }
 Alarm.Input = function AlarmInput({children, ...props}) {
-    <Input {...props}>{children}</Input>
+    return (<Input {...props}>{children}</Input>
+    )
 }
 Alarm.Select = function AlarmSelect({children, ...props}) {
-    <Select {...props}>{children}</Select>
+    return (<Select {...props}>{children}</Select>
+    )
 }
 Alarm.Option = function AlarmOption({children, ...props}) {
-    <Option {...props}>{children}</Option>
+    return (<Option {...props}>{children}</Option>
+    )
 }
 Alarm.Button = function AlarmButton({children, ...props}) {
-    <Button {...props}>{children}</Button>
+    return (<Button {...props}>{children}</Button>
+    )
 }
 Alarm.DisplayAlarmContainer = function AlarmDisplayAlarmContainer({children, ...props}) {
-    <DisplayAlarmContainer {...props}>{children}</DisplayAlarmContainer>
+    return (<DisplayAlarmContainer {...props}>{children}</DisplayAlarmContainer>
+    )
 }
  
 export default Alarm;

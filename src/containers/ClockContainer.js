@@ -97,6 +97,7 @@ const ClockContainer = () => {
         display: buttonClick ? "grid" : "none",
         animationName: "fade_in_show",
         animationDuration: "0.5s",
+
     }
 
     const showQuote = {
