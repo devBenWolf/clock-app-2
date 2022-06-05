@@ -30,14 +30,11 @@ export const QuoteArticle = styled.article`
     padding: 2rem;
     border-radius: 25px;
     margin-top: 2rem;
-    border: solid red;
-
 `
 export const InfoArticle = styled.article`
         grid-area: info;
         align-self: end;
         color: hsl(var(--clr-white));
-        border: solid red;
 `
 export const MenuArticle = styled.article`
 border: solid red;
