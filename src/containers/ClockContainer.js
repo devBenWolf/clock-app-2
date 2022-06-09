@@ -85,13 +85,13 @@ const ClockContainer = () => {
     }
 
     useEffect(() => {
+        setInterval(getTimeValues, 1000)
         getTimeValues()
         getLocationData()
         getQuotes()
-        setInterval(getTimeValues, 1000)
     }, [])
 
-
+    console.log(background)
     const amendedTimeOfDay = timeOfDay.length < 6 ? `0${timeOfDay}${meridian}` : `${timeOfDay}${meridian}`
 
 
