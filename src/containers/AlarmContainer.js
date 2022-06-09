@@ -44,16 +44,24 @@ const AlarmContainer = (props) => {
                         <Alarm.Input 
                             type = "number"
                             name = "alarmHours"
+                            value = {values.alarmHours}
                             placeholder = "HH"
+                            onChange = {handleInputs}
                         />
     
                         <Alarm.Input 
                             type = "number"
                             name = "alarmMinutes"
+                            value = {values.alarmMinutes}
                             placeholder = "MM"
+                            onChange = {handleInputs}
                         />
     
-                        <Alarm.Select>
+                        <Alarm.Select
+                            name = "alarmMeridian"
+                            value = {values.alarmMeridian}
+                            onChange = {handleInputs}
+                        >
                             <Alarm.Option default value = "AM">AM</Alarm.Option>
                             <Alarm.Option value = "PM">PM</Alarm.Option>
                         </Alarm.Select>

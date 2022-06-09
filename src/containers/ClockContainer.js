@@ -88,7 +88,7 @@ const ClockContainer = () => {
         getTimeValues()
         getLocationData()
         getQuotes()
-        setInterval(getTimeValues, 10000)
+        setInterval(getTimeValues, 1000)
     }, [])
 
 
@@ -106,7 +106,7 @@ const ClockContainer = () => {
 
     const showQuote = {
         backgroundColor: background ? "hsl(var(--clr-dark) / 0.6)" : "hsl(var(--clr-dark) / 0)",
-        color: !background ? "hsl(var(--clr-white))" : "hsl(var(--clr-dark))",
+        color: background ? "hsl(var(--clr-white))" : "hsl(var(--clr-dark))",
         display: buttonClick ? "none" : "grid",
         animationName: "fade_in_show",
         animationDuration: "0.5s",
