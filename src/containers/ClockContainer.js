@@ -90,7 +90,10 @@ const ClockContainer = () => {
         getQuotes()
         setInterval(getTimeValues, 10000)
     }, [])
-    console.log(buttonClick)
+
+
+    const amendedTimeOfDay = timeOfDay.length < 6 ? `0${timeOfDay}${meridian}` : `${timeOfDay}${meridian}`
+
 
     const showMenu = {
         backgroundColor: background ? "hsl(var(--clr-white) / 0.9)" : "hsl(var(--clr-dark))",
@@ -103,7 +106,7 @@ const ClockContainer = () => {
 
     const showQuote = {
         backgroundColor: background ? "hsl(var(--clr-dark) / 0.6)" : "hsl(var(--clr-dark) / 0)",
-        color: background ? "hsl(var(--clr-white))" : "hsl(var(--clr-dark))",
+        color: !background ? "hsl(var(--clr-white))" : "hsl(var(--clr-dark))",
         display: buttonClick ? "none" : "grid",
         animationName: "fade_in_show",
         animationDuration: "0.5s",
@@ -118,7 +121,7 @@ const ClockContainer = () => {
                 <Clock.H5 >{quote.en}</Clock.H5>
                 <Clock.H5  fontWeight="bold" margin = "2rem 0 0 0">{quote.author}</Clock.H5>
             </Clock.QuoteArticle>
-            <AlarmContainer />
+            <AlarmContainer amendedTimeOfDay={amendedTimeOfDay} />
             <Clock.InfoArticle>
                 <Clock.SalutationDiv>
                     {background ? <FaSun style={{height: "50px", width: "50px", margin: " 0 0 1rem 0"}} /> : <FaMoon />}
