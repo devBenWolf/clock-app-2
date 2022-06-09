@@ -53,7 +53,7 @@ const ClockContainer = () => {
         } else {
             setBackground(false)
         }
-        console.log(convertedHour)
+
         // set greeting based on time of day
         if (convertedHour >= 6 && convertedHour <= 12) {
             setGreeting("Good Morning, it's currently...")
@@ -91,7 +91,6 @@ const ClockContainer = () => {
         getQuotes()
     }, [])
 
-    console.log(background)
     const amendedTimeOfDay = timeOfDay.length < 6 ? `0${timeOfDay}${meridian}` : `${timeOfDay}${meridian}`
 
 
