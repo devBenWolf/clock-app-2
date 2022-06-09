@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Alarm from "../components/Alarm";
 import { AlarmMain } from "../components/Alarm/styles/alarmStyles";
 import { FaAngleDoubleDown, FaAngleDoubleUp } from "react-icons/fa";
 
 
-const AlarmContainer = () => {
+const AlarmContainer = (props) => {
     const initialValues = {
         alarmHours: "",
         alarmMinutes: "",
@@ -14,6 +14,12 @@ const AlarmContainer = () => {
     }
 
     const [values, setValues] = useState(initialValues)
+
+    const handleInputs = (event) => {
+        const {name, value} = event.target
+    }
+
+    
 
     const getTime = () => {
         const time = new Intl.DateTimeFormat("en", {hour: `2-digit`, minute: `2-digit`})
@@ -25,6 +31,10 @@ const AlarmContainer = () => {
     useEffect(() => {
         setInterval(getTime, 1000)
     }, [])
+
+    const amendedTimeOfDay = props.amendedTimeOfDay
+    console.log(amendedTimeOfDay)
+    console.log(values.currentTime)
 
     return ( 
         <AlarmMain>
