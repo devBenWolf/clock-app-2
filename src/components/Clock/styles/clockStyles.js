@@ -194,6 +194,7 @@ export const H5 = styled.h5`
     font-weight: ${(props) => props.fontWeight};
     line-height: 22px;
     margin: ${(props) => props.margin};
+    color: ${(props) => props.color};
 
     @media(min-width: 75rem) {
         line-height: 28px;
