@@ -68,7 +68,7 @@ const AlarmContainer = (props) => {
     return ( 
         <AlarmMain>
             <Alarm.InnerContainer>
-                <FaAngleDoubleDown size={40} />
+                {!open ?  <FaAngleDoubleDown size={40} onClick = {() => setOpen(!open)} /> : <FaAngleDoubleUp onClick = {() => setOpen(!open)} />}
                 <Alarm.ControlsContainer>
                     <Alarm.InputContainer>
                         <Alarm.Input 
