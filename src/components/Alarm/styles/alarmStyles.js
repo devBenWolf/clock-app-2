@@ -17,12 +17,22 @@ export const ControlsContainer = styled.div`
 `
 export const Input = styled.input`
 width: 9rem;
+
+::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+[type=number] {
+    -moz-appearance: textfield;
+}
 `
 export const InputContainer = styled.div``
 export const Select = styled.select``
 export const Option = styled.option``
 export const Button = styled.button``
-export const ButtonContainer = styled.button`
+export const ButtonContainer = styled.div`
 background-color: transparent;
 border: none;
 
