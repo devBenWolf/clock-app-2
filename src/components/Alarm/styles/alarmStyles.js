@@ -17,16 +17,7 @@ export const ControlsContainer = styled.div`
 `
 export const Input = styled.input`
 width: 9rem;
-
-::-webkit-outer-spin-button,
-::-webkit-inner-spin-button {
--webkit-appearance: none;
-margin: 0;
-}
-
-[type=number] {
-    -moz-appearance: textfield;
-}
+text-align: center;
 `
 export const InputContainer = styled.div``
 export const Select = styled.select``
