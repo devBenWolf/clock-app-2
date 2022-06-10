@@ -7,6 +7,7 @@ export const Main = styled.main`
     height: 100vh;
     grid-template-areas:
         "quote"
+        "alarm"
         "info"
         "button"
         "menu";

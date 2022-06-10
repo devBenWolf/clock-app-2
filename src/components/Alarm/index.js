@@ -9,6 +9,7 @@ import {
     Button,
     ButtonContainer,
     DisplayAlarmContainer,
+    DisplayAlarmText
 } from "./styles/alarmStyles"
 
 
@@ -50,6 +51,10 @@ Alarm.Button = function AlarmButton({children, ...props}) {
 }
 Alarm.DisplayAlarmContainer = function AlarmDisplayAlarmContainer({children, ...props}) {
     return (<DisplayAlarmContainer {...props}>{children}</DisplayAlarmContainer>
+    )
+}
+Alarm.DisplayAlarmText = function AlarmDisplayAlarmText({children, ...props}) {
+    return (<DisplayAlarmText {...props}>{children}</DisplayAlarmText>
     )
 }
  

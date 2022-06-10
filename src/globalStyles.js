@@ -175,4 +175,13 @@ export const GlobalStyles = createGlobalStyle`
              transform: scale(1)
         }
    }
+
+//   ****** utility classes ******
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: flex;
+}
 `

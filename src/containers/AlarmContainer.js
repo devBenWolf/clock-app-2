@@ -68,8 +68,11 @@ const AlarmContainer = (props) => {
     return ( 
         <AlarmMain>
             <Alarm.InnerContainer>
-                {!open ?  <FaAngleDoubleDown size={40} onClick = {() => setOpen(!open)} /> : <FaAngleDoubleUp onClick = {() => setOpen(!open)} />}
-                <Alarm.ControlsContainer>
+                {!open ?  <FaAngleDoubleDown size={40} onClick = {() => setOpen(!open)} style={{color: "white", cursor:"pointer"}} /> 
+                : <FaAngleDoubleUp size={40} onClick = {() => setOpen(!open)} style={{color: "white", cursor: "pointer"}} />
+                }
+
+                <Alarm.ControlsContainer className = {`${open ? "visible" : "invisible"}`}>
                     <Alarm.InputContainer>
                         <Alarm.Input 
                             type = "number"
@@ -100,13 +103,15 @@ const AlarmContainer = (props) => {
                     </Alarm.InputContainer>
 
                     <Alarm.ButtonContainer>
-                        <Alarm.Button onClick = {setAlarm}>set alarm</Alarm.Button>
+                        <Alarm.Button 
+                            onClick = {setAlarm}
+                        >set alarm</Alarm.Button>
                         <Alarm.Button onClick = {clearAlarm}>clear alarm</Alarm.Button>
                     </Alarm.ButtonContainer>
-                    <Alarm.DisplayAlarmContainer>
-
-                    </Alarm.DisplayAlarmContainer>
                 </Alarm.ControlsContainer>
+                <Alarm.DisplayAlarmContainer>
+                        <Alarm.DisplayAlarmText>{localStorage.getItem("alarm")}</Alarm.DisplayAlarmText>
+                    </Alarm.DisplayAlarmContainer>
             </Alarm.InnerContainer>
         </AlarmMain>
      );
