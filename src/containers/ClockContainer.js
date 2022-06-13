@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 import Clock from "../components/Clock";
 import { Main } from "../components/Clock/styles/clockStyles";
-import {FaChevronDown, FaChevronUp, FaSun, FaMoon} from "react-icons/fa"
+import {FaChevronDown, FaChevronUp, FaSun, FaMoon, FaBold} from "react-icons/fa"
 import { GlobalStyles } from "../globalStyles";
 import AlarmContainer from "./AlarmContainer";
 
@@ -48,7 +48,7 @@ const ClockContainer = () => {
         
 
         // use hours to determine day or night background
-        if (convertedHour >= 6 && convertedHour <= 18 ) {
+        if (convertedHour > 6 && convertedHour <= 18 ) {
             setBackground(true)
         } else {
             setBackground(false)
@@ -96,7 +96,7 @@ const ClockContainer = () => {
 
     const showMenu = {
         backgroundColor: background ? "hsl(var(--clr-white) / 0.9)" : "hsl(var(--clr-dark))",
-        color: background ? "hsl(var(--clr-dark))" : "hsl(var(--clr-white))",
+        color: "white",
         display: buttonClick ? "grid" : "none",
         animationName: "fade_in_show",
         animationDuration: "0.5s",
@@ -109,8 +109,9 @@ const ClockContainer = () => {
         display: buttonClick ? "none" : "grid",
         animationName: "fade_in_show",
         animationDuration: "0.5s",
+
     }
-console.log()
+
 
     return ( 
         <>
