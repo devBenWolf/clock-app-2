@@ -10,6 +10,7 @@ export const InnerContainer = styled.div`
     
     @media (min-width: 45rem) {
         display: flex;
+        height: 8rem;
     }
 `
 
