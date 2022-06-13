@@ -68,7 +68,15 @@ const AlarmContainer = (props) => {
     return ( 
         <AlarmMain>
             <Alarm.InnerContainer>
-                
+                            <Clock.ButtonArticle>
+                <Clock.Button
+                    onClick={() => setButtonClick(!buttonClick)}
+                >{ buttonClick ? "Less" : "More"}
+                    <Clock.ButtonSpan>
+                        { buttonClick ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
+                    </Clock.ButtonSpan>
+                </Clock.Button>
+            </Clock.ButtonArticle>
 
                 <Alarm.ControlsContainer className = {`${open ? "visible" : "invisible"}`}>
                     <Alarm.InputContainer>
