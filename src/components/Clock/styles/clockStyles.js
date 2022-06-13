@@ -21,6 +21,7 @@ export const Main = styled.main`
         grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(2rem, 70rem)) minmax(2rem, 1fr);
         grid-template-areas:
             ". quote . ."
+            ". alarm . ."
             ". info button ."
             "menu menu menu menu";
     }

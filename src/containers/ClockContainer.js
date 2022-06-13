@@ -20,52 +20,84 @@ const ClockContainer = () => {
     const [buttonClick, setButtonClick] = useState(false)
 
     const getTimeValues = () => {
-        const timeValues = new Intl.DateTimeFormat("en", {hour: "numeric", minute: "numeric"})
+        const timeValues = new Intl.DateTimeFormat("en", {hour: "numeric", minute: "numeric", hour12: false})
         let formattedTime = timeValues.format()
-        
-        
-        // separate hours, minutes, meridian modifier
-        const [time, modifier] = formattedTime.split(" ")
-        let [hour, minute] = formattedTime.split(":")
-        setMeridian(modifier)
 
-        // change 12hour to 24hour
-        if (hour === "12") {
-            hour = "00"
+        let hours = formattedTime.slice(0, -3)
+        const hoursArray = hours.split("")
+        if (hoursArray[0] === "0") {
+            hours = hoursArray.shift().join("")
         }
 
-        if (modifier === "PM") {
-            hour = parseInt(hour, 10) + 12
+        if (hours >= 6 && hours < 12) {
+            setGreeting("Good Morning, it's currently...")
+        } else if (hours >= 12 && hours <= 17) {
+            setGreeting("Good Afternoon, it's currently...")
+        } else if (hours >= 18 && hours <= 21) {
+            setGreeting("Good Evening, it's currently...")
+        } else {
+            setGreeting("Good Night, it's currently")
         }
 
-        let convertedTime = `${hour}:${minute}`
-        let noModifier = convertedTime.slice(0, -2)
-        setTimeOfDay(noModifier)
-        setAltTimeOfDay(noModifier)
-
-        // isolate hours 
-        let convertedHour = convertedTime.slice(0, -6)
-        
-
-        // use hours to determine day or night background
-        if (convertedHour > 6 && convertedHour <= 18 ) {
+        if (hours >= 6 && hours <= 18) {
             setBackground(true)
         } else {
             setBackground(false)
         }
 
-        // set greeting based on time of day
-        if (convertedHour >= 6 && convertedHour <= 12) {
-            setGreeting("Good Morning, it's currently...")
-        } else if (convertedHour >= 12 && convertedHour <= 17) {
-            setGreeting("Good Afternoon, it's currently...")
-        } else if (convertedHour > 17 && convertedHour <= 20)  {
-            setGreeting("Good Evening, it's currently...")
-        } else {
-            setGreeting("Good Night, it's currently...")
-        }
-    }
+        setTimeOfDay(formattedTime)
+        // separate hours, minutes, meridian modifier
+        //const [time, modifier] = formattedTime.split(" ")
+        //let [hour, minute] = formattedTime.split(":")
+        //setMeridian(modifier)
 
+        // change 12hour to 24hour
+        //if (hour === "12") {
+        //    hour = "00"
+        //}
+//
+        //if (modifier === "PM") {
+        //    hour = parseInt(hour, 10) + 12
+        //}
+//
+        //let convertedTime = `${hour}:${minute}`
+        //let noModifier = convertedTime.slice(0, -2)
+        //setTimeOfDay(noModifier)
+        //setAltTimeOfDay(noModifier)
+//
+        //// isolate hours 
+        //let convertedHour = convertedTime.slice(0, -6)
+//
+        //// use hours to determine day or night background
+        //if (convertedHour > 6 && convertedHour <= 18 ) {
+        //    setBackground(true)
+        //} else {
+        //    setBackground(false)
+        //}
+//
+        //console.log(hours)
+        // set greeting based on time of day
+        //if (convertedHour >= 6 && convertedHour <= 12) {
+        //    setGreeting("Good Morning, it's currently...")
+        //} else if (convertedHour >= 12 && convertedHour <= 17) {
+        //    setGreeting("Good Afternoon, it's currently...")
+        //} else if (convertedHour > 17 && convertedHour <= 20)  {
+        //    setGreeting("Good Evening, it's currently...")
+        //} else {
+        //    setGreeting("Good Night, it's currently...")
+        //}
+
+
+        //if (hours >= 6 && hours <= 12) {
+        //    setGreeting("Good Morning, it's currently...")
+        //} else if (hours >= 12 && hours <= 17) {
+        //    setGreeting("Good Afternoon, it's currently...")
+        //} else if (hours > 17 && hours <= 20)  {
+        //    setGreeting("Good Evening, it's currently...")
+        //} else {
+        //    setGreeting("Good Night, it's currently...")
+        //}
+    }
     // get geolocation data
     const getLocationData = async () => {
         const response = await fetch("https://ipwhois.app/json/")
@@ -91,12 +123,9 @@ const ClockContainer = () => {
         getQuotes()
     }, [])
 
-    const amendedTimeOfDay = timeOfDay.length < 6 ? `0${timeOfDay}` : `${timeOfDay}`
-
-
     const showMenu = {
         backgroundColor: background ? "hsl(var(--clr-white) / 0.9)" : "hsl(var(--clr-dark))",
-        color: "white",
+        color: "black",
         display: buttonClick ? "grid" : "none",
         animationName: "fade_in_show",
         animationDuration: "0.5s",
@@ -105,14 +134,12 @@ const ClockContainer = () => {
 
     const showQuote = {
         backgroundColor: background ? "hsl(var(--clr-dark) / 0.6)" : "hsl(var(--clr-dark) / 0)",
-        color: background ? "hsl(var(--clr-white))" : "hsl(var(--clr-dark))",
+        color: "white",
         display: buttonClick ? "none" : "grid",
         animationName: "fade_in_show",
         animationDuration: "0.5s",
 
     }
-
-
     return ( 
         <>
         <GlobalStyles />
@@ -123,13 +150,11 @@ const ClockContainer = () => {
                 <Clock.H5  fontWeight="bold" margin = "2rem 0 0 0">{quote.author}</Clock.H5>
             </Clock.QuoteArticle>
             <AlarmContainer 
-                amendedTimeOfDay={amendedTimeOfDay} 
-                setButtonClick = {setButtonClick}
-                buttonClick = {buttonClick}
+                timeOfDay = {timeOfDay}
                 />
             <Clock.InfoArticle>
                 <Clock.SalutationDiv>
-                    {background ? <FaSun style={{height: "50px", width: "50px", margin: " 0 0 1rem 0"}} /> : <FaMoon />}
+                    {background ? <FaSun size = {40} style={{margin: " 0 0 1rem 0"}} /> : <FaMoon size = {40} style={{margin: " 0 0 1rem 0"}} />}
                     <Clock.H4>{greeting}</Clock.H4>
                 </Clock.SalutationDiv>
                 <Clock.H1 style={{whiteSpace: "nowrap"}}>{timeOfDay}</Clock.H1>

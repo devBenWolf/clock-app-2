@@ -1,17 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 import Alarm from "../components/Alarm";
 import { AlarmMain } from "../components/Alarm/styles/alarmStyles";
-import { FaAngleDoubleDown, FaAngleDoubleUp } from "react-icons/fa";
+import Clock from "../components/Clock";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 
 const AlarmContainer = (props) => {
     const initialValues = {
         alarmHours: "",
         alarmMinutes: "",
-        alarmMeridian: "AM",
         alarmTime: "",
     }
-
 
     const [values, setValues] = useState(initialValues)
     const [open, setOpen] = useState(false)
@@ -22,7 +21,7 @@ const AlarmContainer = (props) => {
     audio.playbackRate = 0.8
 
     const checkAlarm = () => {
-        if (localStorage.getItem("alarm") === props.amendedTimeOfDay) {
+        if (localStorage.getItem("alarm") === props.timeOfDay) {
           audio.play()
 
         }
@@ -45,16 +44,20 @@ const AlarmContainer = (props) => {
           setValues({...values, alarmHours: "", alarmMinutes: ""})
           setValues({...values, alarmTime: ""})
         } else {
-          setValues({...values, alarmTime: `${values.alarmHours}:${values.alarmMinutes} ${values.alarmMeridian}`})
-          localStorage.setItem("alarm", `${values.alarmHours}:${values.alarmMinutes} ${values.alarmMeridian}`)
+          setValues({...values, alarmTime: `${values.alarmHours}:${values.alarmMinutes}`})
+          localStorage.setItem("alarm", `${values.alarmHours}:${values.alarmMinutes}`)
         }
       }
 
+      console.log(props.timeOfDay)
+      console.log(localStorage.getItem("alarm"))
+
       const clearAlarm = () => {
-        setValues({...values, alarmHours: "", alarmMinutes: "", alarmMeridian: "AM", alarmTime: ""})
+        setValues({...values, alarmHours: "", alarmMinutes: "", alarmTime: ""})
         localStorage.removeItem("alarm")
         audio.pause()
       }  
+
 
     const handleInputs = (event) => {
         const {name, value} = event.target
@@ -68,15 +71,13 @@ const AlarmContainer = (props) => {
     return ( 
         <AlarmMain>
             <Alarm.InnerContainer>
-                            <Clock.ButtonArticle>
-                <Clock.Button
-                    onClick={() => setButtonClick(!buttonClick)}
-                >{ buttonClick ? "Less" : "More"}
+            <Clock.Button
+                    onClick={() => setOpen(!open)}
+                >{ open ? "hide" : "alarm"}
                     <Clock.ButtonSpan>
-                        { buttonClick ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
+                        { open ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
                     </Clock.ButtonSpan>
                 </Clock.Button>
-            </Clock.ButtonArticle>
 
                 <Alarm.ControlsContainer className = {`${open ? "visible" : "invisible"}`}>
                     <Alarm.InputContainer>
@@ -97,15 +98,6 @@ const AlarmContainer = (props) => {
                             min="1"
                             onChange = {handleInputs}
                         />
-    
-                        <Alarm.Select
-                            name = "alarmMeridian"
-                            value = {values.alarmMeridian}
-                            onChange = {handleInputs}
-                        >
-                            <Alarm.Option default value = "AM">AM</Alarm.Option>
-                            <Alarm.Option value = "PM">PM</Alarm.Option>
-                        </Alarm.Select>
                     </Alarm.InputContainer>
 
                     <Alarm.ButtonContainer>
@@ -116,7 +108,7 @@ const AlarmContainer = (props) => {
                     </Alarm.ButtonContainer>
                 </Alarm.ControlsContainer>
                 <Alarm.DisplayAlarmContainer>
-                        <Alarm.DisplayAlarmText>{localStorage.getItem("alarm")}</Alarm.DisplayAlarmText>
+                        <Alarm.DisplayAlarmText>alarm set for</Alarm.DisplayAlarmText><Alarm.DisplayAlarmSpan>{localStorage.getItem("alarm")}</Alarm.DisplayAlarmSpan>
                     </Alarm.DisplayAlarmContainer>
             </Alarm.InnerContainer>
         </AlarmMain>
