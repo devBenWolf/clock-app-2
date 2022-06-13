@@ -7,7 +7,12 @@ margin: 1rem 2rem 1rem 2rem;
 export const InnerContainer = styled.div`
     display: grid;
     place-items: start;
+    
+    @media (min-width: 45rem) {
+        display: flex;
+    }
 `
+
 export const ControlsContainer = styled.div`
     display: flex;
     margin-top: 1rem;
