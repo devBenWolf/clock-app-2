@@ -122,7 +122,11 @@ const ClockContainer = () => {
                 <Clock.H5 >{quote.en}</Clock.H5>
                 <Clock.H5  fontWeight="bold" margin = "2rem 0 0 0">{quote.author}</Clock.H5>
             </Clock.QuoteArticle>
-            <AlarmContainer amendedTimeOfDay={amendedTimeOfDay} />
+            <AlarmContainer 
+                amendedTimeOfDay={amendedTimeOfDay} 
+                setButtonClick = {setButtonClick}
+                buttonClick = {buttonClick}
+                />
             <Clock.InfoArticle>
                 <Clock.SalutationDiv>
                     {background ? <FaSun style={{height: "50px", width: "50px", margin: " 0 0 1rem 0"}} /> : <FaMoon />}
