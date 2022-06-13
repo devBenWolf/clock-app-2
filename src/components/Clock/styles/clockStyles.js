@@ -40,7 +40,6 @@ export const InfoArticle = styled.article`
         color: hsl(var(--clr-white));
 `
 export const MenuArticle = styled.article`
-border: solid red;
     grid-area: menu;
     justify-self: center;
     width: 100%;

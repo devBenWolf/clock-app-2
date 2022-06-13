@@ -15,19 +15,22 @@ export const InnerContainer = styled.div`
 
 export const ControlsContainer = styled.div`
     display: flex;
-    margin-top: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: hsl(217, 48%, 36%);
+    background-color: white;
     padding: 1rem; 
     border-radius: 5px;
     animation-name: fade_in_show;
-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+
+    @media (min-width: 45rem) {
+        margin-left: 5rem;
+    }
 `
 export const Input = styled.input`
 text-align: center;
-background-image: linear-gradient(to left top, hsl(314, 87%, 54%), hsl(274, 87%, 54%));
+background-color: hsl(var(--clr-dark) / 0.8);
 color: white;
 border-radius: 5px;
 border: none;
@@ -50,10 +53,11 @@ text-align: center;
 `
 export const Option = styled.option``
 export const Button = styled.button`
-    background-image: linear-gradient(to left top, hsl(314, 87%, 54%), hsl(274, 87%, 54%));
+    background-color: hsl(var(--clr-dark) / 0.8);
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 `
 export const ButtonContainer = styled.div`
 background-color: transparent;

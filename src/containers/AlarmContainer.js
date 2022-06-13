@@ -79,7 +79,7 @@ const AlarmContainer = (props) => {
                             { open ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
                         </Clock.ButtonSpan>
                 </Clock.Button>
-                <Alarm.DisplayAlarmContainer>
+                <Alarm.DisplayAlarmContainer className =  {`${localStorage.getItem("alarm") ? "visible" : "invisible"}`}>
                     <Alarm.DisplayAlarmText>alarm set for</Alarm.DisplayAlarmText>
                     <Alarm.DisplayAlarmSpan>{localStorage.getItem("alarm")}</Alarm.DisplayAlarmSpan>
                 </Alarm.DisplayAlarmContainer>
