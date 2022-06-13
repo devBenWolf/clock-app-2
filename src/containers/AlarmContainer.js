@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Alarm from "../components/Alarm";
 import { AlarmMain } from "../components/Alarm/styles/alarmStyles";
 import Clock from "../components/Clock";
-import { FaAngleDoubleDown, FaAngleDoubleUp } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 
 const AlarmContainer = (props) => {
@@ -71,10 +71,10 @@ const AlarmContainer = (props) => {
             <Alarm.InnerContainer>
                             <Clock.ButtonArticle>
                 <Clock.Button
-                    onClick={() => props.setButtonClick(!buttonClick)}
-                >{ buttonClick ? "Less" : "More"}
+                    onClick={() => setOpen(!open)}
+                >{ open ? "Less" : "More"}
                     <Clock.ButtonSpan>
-                        { buttonClick ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
+                        { open ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
                     </Clock.ButtonSpan>
                 </Clock.Button>
             </Clock.ButtonArticle>
