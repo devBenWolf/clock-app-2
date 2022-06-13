@@ -1,14 +1,14 @@
 import styled from "styled-components"
 
 export const AlarmMain = styled.div`
-bottom: 70%;
-grid-area: alarm;
+border: solid green;
 `
 export const InnerContainer = styled.div`
     display: grid;
     place-items: center;
     width: 30rem;
-    height: 10rem;
+    height: 20rem;
+    border: solid red;
 `
 export const ControlsContainer = styled.div`
     display: flex;
