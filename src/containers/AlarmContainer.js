@@ -71,7 +71,7 @@ const AlarmContainer = (props) => {
             <Alarm.InnerContainer>
                             <Clock.ButtonArticle>
                 <Clock.Button
-                    onClick={() => setButtonClick(!buttonClick)}
+                    onClick={() => props.setButtonClick(!buttonClick)}
                 >{ buttonClick ? "Less" : "More"}
                     <Clock.ButtonSpan>
                         { buttonClick ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
