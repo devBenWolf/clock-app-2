@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Alarm from "../components/Alarm";
 import { AlarmMain } from "../components/Alarm/styles/alarmStyles";
+import Clock from "../components/Clock";
 import { FaAngleDoubleDown, FaAngleDoubleUp } from "react-icons/fa";
 
 
