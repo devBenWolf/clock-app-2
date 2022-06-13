@@ -71,13 +71,19 @@ const AlarmContainer = (props) => {
     return ( 
         <AlarmMain>
             <Alarm.InnerContainer>
-            <Clock.Button
-                    onClick={() => setOpen(!open)}
-                >{ open ? "hide" : "alarm"}
-                    <Clock.ButtonSpan>
-                        { open ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
-                    </Clock.ButtonSpan>
+                <div style={{marginRight: "1rem"}}>
+                <Clock.Button
+                        onClick={() => setOpen(!open)}
+                    >{ open ? "hide" : "alarm"}
+                        <Clock.ButtonSpan>
+                            { open ? <FaChevronUp style={{color: "white"}} /> : <FaChevronDown style={{color: "white"}} /> }
+                        </Clock.ButtonSpan>
                 </Clock.Button>
+                <Alarm.DisplayAlarmContainer>
+                    <Alarm.DisplayAlarmText>alarm set for</Alarm.DisplayAlarmText>
+                    <Alarm.DisplayAlarmSpan>{localStorage.getItem("alarm")}</Alarm.DisplayAlarmSpan>
+                </Alarm.DisplayAlarmContainer>
+                </div>
 
                 <Alarm.ControlsContainer className = {`${open ? "visible" : "invisible"}`}>
                     <Alarm.InputContainer>
@@ -107,9 +113,6 @@ const AlarmContainer = (props) => {
                         <Alarm.Button onClick = {clearAlarm}>clear alarm</Alarm.Button>
                     </Alarm.ButtonContainer>
                 </Alarm.ControlsContainer>
-                <Alarm.DisplayAlarmContainer>
-                        <Alarm.DisplayAlarmText>alarm set for</Alarm.DisplayAlarmText><Alarm.DisplayAlarmSpan>{localStorage.getItem("alarm")}</Alarm.DisplayAlarmSpan>
-                    </Alarm.DisplayAlarmContainer>
             </Alarm.InnerContainer>
         </AlarmMain>
      );
