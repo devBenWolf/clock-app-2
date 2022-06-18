@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 export const Main = styled.main`
     position: relative;
+    border: solid white;
     display: grid;
     height: 100vh;
     grid-template-areas:
