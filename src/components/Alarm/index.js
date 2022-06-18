@@ -4,7 +4,6 @@ import {
     ControlsContainer,
     Input,
     InputContainer,
-    Select,
     Option,
     Button,
     ButtonContainer,
@@ -34,10 +33,7 @@ Alarm.Input = function AlarmInput({children, ...props}) {
     return (<Input {...props}>{children}</Input>
     )
 }
-Alarm.Select = function AlarmSelect({children, ...props}) {
-    return (<Select {...props}>{children}</Select>
-    )
-}
+
 Alarm.Option = function AlarmOption({children, ...props}) {
     return (<Option {...props}>{children}</Option>
     )

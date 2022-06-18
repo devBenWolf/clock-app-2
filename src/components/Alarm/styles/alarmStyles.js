@@ -45,13 +45,6 @@ export const InputContainer = styled.div`
     flex-direction: column;
     gap: 2rem;
 `
-export const Select = styled.select`
-background-image: linear-gradient(to left top, hsl(314, 87%, 54%), hsl(274, 87%, 54%));
-color: white;
-border-radius: 5px;
-border: none;
-text-align: center;
-`
 export const Option = styled.option``
 export const Button = styled.button`
     background-color: hsl(var(--clr-dark) / 0.8);
@@ -66,7 +59,6 @@ display: flex;
 gap: 2rem;
 border: none;
 margin-top: 1rem;
-
 `
 export const DisplayAlarmContainer = styled.div`
 margin-top: 1rem;

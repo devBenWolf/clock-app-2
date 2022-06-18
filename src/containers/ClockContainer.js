@@ -7,8 +7,6 @@ import AlarmContainer from "./AlarmContainer";
 
 const ClockContainer = () => {
     const [timeOfDay, setTimeOfDay] = useState("")
-    const [altTimeOfDay, setAltTimeOfDay] = useState("")
-    const [meridian, setMeridian] = useState("")
     const [background, setBackground] = useState(null)
     const [greeting, setGreeting] = useState("")
     const [quote, setQuote] = useState("")
@@ -39,7 +37,7 @@ const ClockContainer = () => {
             setGreeting("Good Night, it's currently")
         }
 
-        if (hours >= 6 && hours <= 18) {
+        if (hours >= 6 && hours < 18) {
             setBackground(true)
         } else {
             setBackground(false)
@@ -73,7 +71,7 @@ const ClockContainer = () => {
     }, [])
 
     const showMenu = {
-        backgroundColor: background ? "hsl(var(--clr-white) / 0.9)" : "hsl(var(--clr-dark))",
+        backgroundColor: "hsl(var(--clr-white) / 0.9)",
         color: "black",
         display: buttonClick ? "grid" : "none",
         animationName: "fade_in_show",
