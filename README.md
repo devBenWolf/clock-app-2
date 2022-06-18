@@ -1,5 +1,5 @@
 # Clock App
-Uses external APIs to set data based on user location. Additional logic for rendering content based on time of day.
+Uses external APIs to set data based on user location. Additional logic for rendering content based on time of day. I enhanced this project with addition of an alarm function.
 
 ## Figma file and assets available at https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM
 
