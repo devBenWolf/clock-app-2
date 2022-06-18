@@ -108,7 +108,7 @@ export const Button = styled.button`
     align-items: center;
     padding:0.6rem 1rem 0.6rem 1rem;
     background-color: white;
-    width: 14rem;
+    width: 16rem;
 `
 export const ButtonSpan = styled.span`
     display: grid;
