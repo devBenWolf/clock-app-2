@@ -54,6 +54,7 @@ export const MenuArticle = styled.article`
 
     > * {
         margin: 0 2rem 0 2rem;
+        
     }
 
         @media (min-width: 35rem) {
@@ -61,7 +62,7 @@ export const MenuArticle = styled.article`
                 margin: 0 5rem 0 5rem;
             }
 
-            padding: 2rem 0 2rem 0;
+            padding: 0.5rem 0 0.5rem 0;
             grid-template-areas:
             "zone country"
             "capital currency";
@@ -77,7 +78,7 @@ export const MenuDiv = styled.div`
     @media (min-width: 35rem) {
         flex-direction: column;
         align-items: start;
-        padding: 2rem 0 2rem 0;
+        padding: 1.5rem 0 1.5rem 0;
     }
 `
 export const SalutationDiv = styled.div`
@@ -150,7 +151,7 @@ export const H2 = styled.h2`
     font-size: var(--fs-800);
     font-family: "Inter", sans-serif;
     font-weight: bold;
-    line-height: 68px;
+    line-height: 58px;
 
 `
 export const H3 = styled.h3`

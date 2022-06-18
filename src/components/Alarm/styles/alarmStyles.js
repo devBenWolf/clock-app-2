@@ -24,9 +24,11 @@ export const ControlsContainer = styled.div`
     border-radius: 5px;
     animation-name: fade_in_show;
     animation-duration: 0.5s;
+    margin-top: 1rem;
 
     @media (min-width: 45rem) {
         margin-left: 5rem;
+        margin-top: 0;
     }
 `
 export const Input = styled.input`
