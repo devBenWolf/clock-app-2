@@ -24,8 +24,10 @@ const ClockContainer = () => {
         let hours = formattedTime.slice(0, -3)
         const hoursArray = hours.split("")
         if (hoursArray[0] === "0") {
-            hours = hoursArray.shift().join("")
+            hours = hoursArray.splice(1)
+            hours.join(``)
         }
+        
 
         if (hours >= 6 && hours < 12) {
             setGreeting("Good Morning, it's currently...")
@@ -44,7 +46,7 @@ const ClockContainer = () => {
         }
 
         setTimeOfDay(formattedTime)
-    }
+}
     // get geolocation data
     const getLocationData = async () => {
         const response = await fetch("https://ipwhois.app/json/")

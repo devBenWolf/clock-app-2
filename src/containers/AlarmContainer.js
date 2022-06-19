@@ -49,9 +49,6 @@ const AlarmContainer = (props) => {
         }
       }
 
-      console.log(props.timeOfDay)
-      console.log(localStorage.getItem("alarm"))
-
       const clearAlarm = () => {
         setValues({...values, alarmHours: "", alarmMinutes: "", alarmTime: ""})
         localStorage.removeItem("alarm")
