@@ -34,9 +34,11 @@ export const ControlsContainer = styled.div`
 export const Input = styled.input`
 text-align: center;
 background-color: hsl(var(--clr-dark) / 0.8);
+width: 10rem;
 color: white;
 border-radius: 5px;
 border: none;
+height: 3rem;
 padding: 0 1rem 0 1rem;
 ::placeholder {
     opacity: 1;
